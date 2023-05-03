@@ -3909,7 +3909,7 @@ namespace TB_mu2e
             for(int cmb = 0; cmb < 16; cmb+=2)
             {
                 activeFEB.SetV(Convert.ToDouble(cmbBias.Text), cmb / 4, Convert.ToSByte(((cmb % 4) / 2) + 1));
-                if(activeFEB.ReadA0(cmb / 4, cmb * 4) < currentThresh)
+                if(activeFEB.ReadA0(cmb / 4, cmb * 4) > currentThresh)
                 {
                     suspected_cmbs += cmb.ToString() + "/" + (cmb + 1).ToString() + ",";
                     cmbInfoBox.Text = suspected_cmbs;
